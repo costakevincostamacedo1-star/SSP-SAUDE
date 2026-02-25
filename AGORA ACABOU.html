@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSP SAÚDE</title>
+
+<style>
+/* ===== Geral ===== */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("https://drive.google.com/file/d/19motXrimJkEbPOEqpI7w_i3pvo2nil20/view?usp=sharing");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+/* Camada escura sobre a imagem */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(120, 0, 0, 0.75);
+    z-index: -1;
+}
+
+/* ===== Header ===== */
+header {
+    padding: 60px 20px;
+    text-align: center;
+    background: rgba(180, 0, 0, 0.85);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+/* ===== Nav ===== */
+nav {
+    text-align: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+nav a {
+    color: #b30000;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff1a1a;
+}
+
+/* ===== Seções ===== */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #ff4d4d;
+}
+
+.box {
+    background: rgba(0, 0, 0, 0.65);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+/* ===== Botão WhatsApp ===== */
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebe5d;
+}
+
+/* ===== Galeria de Fotos ===== */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.5);
+}
+
+/* ===== Modal ===== */
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    cursor: pointer;
+}
+
+#modal-img {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.7);
+}
+
+#close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    user-select: none;
+}
+
+#close:hover {
+    color: #ff4d4d;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: rgba(180, 0, 0, 0.9);
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header>
+    <h1>SSP SAÚDE</h1>
+    <p>Atendimento de emergência e remoção hospitalar 24 horas</p>
+</header>
+
+<!-- ===== Nav ===== -->
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#fotos">Galeria</a>
+    <a href="#contato">Contato</a>
+</nav>
+
+<!-- ===== Sobre ===== -->
+<section id="sobre">
+    <div class="box">
+        <h2>Sobre a SSP SAÚDE</h2>
+        <p>Especialistas em atendimento pré-hospitalar, remoção hospitalar e emergências médicas.
+           Equipe treinada e ambulâncias modernas.</p>
+    </div>
+</section>
+
+<!-- ===== Serviços ===== -->
+<section id="servicos">
+    <div class="box">
+        <h2>Nossos Serviços</h2>
+        <p>✔ Ambulância 24 horas</p>
+        <p>✔ Atendimento de emergência</p>
+        <p>✔ Remoção hospitalar</p>
+
+        <a class="whatsapp-btn" 
+           href="https://wa.me/5511977125451?text=Olá,%20preciso%20solicitar%20uma%20ambulância%20urgente." 
+           target="_blank">
+           🚑 Solicitar Ambulância via WhatsApp
+        </a>
+    </div>
+</section>
+
+<!-- ===== Galeria de Fotos ===== -->
+<section id="fotos">
+  <div class="box">
+    <h2>Galeria de Fotos</h2>
+    <div class="gallery">
+      <img src="ambulanciau.jpeg" alt="Foto 1" onclick="openModal(https://drive.google.com/file/d/17jVLKGauV4usFAA7bikulcLZZx1iNUyR/view?usp=drive_link)">
+      <img src="ambulanciaf.jpeg" alt="Foto 2" onclick="openModal(https://drive.google.com/file/d/1zNc1DXEcQMiPxxEEQDOVIATNaIdbp0-X/view?usp=drive_link)">
+      <img src="ambulanciag.jpeg" alt="Foto 3" onclick="openModal(https://drive.google.com/file/d/17ENS0h5E7L52_oCTFrfkggaoSd1UlUo6/view?usp=drive_link)">
+      <img src="ambulanciaq.jpeg" alt="Foto 4" onclick="openModal(https://drive.google.com/file/d/1s9Lh-qDOSfX19bW9CjP2XmtkWxYSK9wj/view?usp=drive_link)">
+      <img src="ambulancias.jpeg" alt="Foto 5" onclick="openModal(https://drive.google.com/file/d/19motXrimJkEbPOEqpI7w_i3pvo2nil20/view?usp=drive_link)">
+      <img src="ambulanciai.jpeg" alt="Foto 6" onclick="openModal(https://drive.google.com/file/d/1BqHI92pQN0hof-uGbICnL1U7_2BYIlL5/view?usp=drive_link)">
+    </div>
+  </div>
+</section>
+
+<!-- ===== Modal ===== -->
+<div id="modal" onclick="closeModal()">
+  <span id="close">&times;</span>
+  <img id="modal-img" src="" alt="Foto ampliada">
+</div>
+<section id="missao">
+  <div class="box">
+    <h2>Missão, Visão e Valores</h2>
+
+    <h3>Missão</h3>
+    <p>Prestar serviços de ambulância particular com excelência, segurança e agilidade, oferecendo remoções simples, UTI móvel e cobertura de eventos, com atendimento humanizado, ética e compromisso absoluto com a preservação da vida.</p>
+
+    <h3>Visão</h3>
+    <p>Ser reconhecida como referência em serviços de ambulância particular, destacando-se pela qualidade no atendimento, rapidez nas respostas, confiança dos clientes e valorização contínua da saúde e do bem-estar da população.</p>
+
+    <h3>Valores</h3>
+    <ul>
+      <li><strong>Preservação da vida:</strong> A vida é nossa prioridade em todas as decisões e atendimentos.</li>
+      <li><strong>Humanização no cuidado:</strong> Atendimento acolhedor, respeitoso e empático em todos os níveis de assistência.</li>
+      <li><strong>Ética e profissionalismo:</strong> Atuação responsável, transparente e alinhada às normas técnicas e legais.</li>
+      <li><strong>Agilidade com segurança:</strong> Resposta rápida sem abrir mão da qualidade e da segurança assistencial.</li>
+      <li><strong>Excelência operacional:</strong> Busca constante por aprimoramento técnico, estrutural e tecnológico.</li>
+      <li><strong>Trabalho em equipe:</strong> Profissionais qualificados, integrados e comprometidos com o melhor cuidado.</li>
+      <li><strong>Compromisso com o cliente:</strong> Atendimento confiável, personalizado e focado nas necessidades de cada situação.</li>
+    </ul>
+  </div>
+</section>
+<!-- ===== Contato ===== -->
+<section id="contato">
+    <div class="box">
+        <h2>Contato</h2>
+        <p>📞 (11) 97712-5451</p>
+        <p>📧 contato@sspsaude.com</p>
+    </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+    <p>© 2026 SSP SAÚDE - Atendimento 24 Horas</p>
+</footer>
+
+<!-- ===== Script do Modal ===== -->
+<script>
+  function openModal(src) {
+    document.getElementById('modal-img').src = src;
+    document.getElementById('modal').style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById('modal').style.display = "none";
+  }
+</script>
+
+</body>
+</html>
